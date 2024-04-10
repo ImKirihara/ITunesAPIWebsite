@@ -66,7 +66,7 @@ app.post('/insertData', (req, res) => {
   });
 });
 
-app.get('/getUsers', (req, res) =>{
+app.post('/getUsers', (req, res) =>{
   db.all("SELECT * FROM USERS", function(err, rows){
     res.json(rows)
   });
@@ -112,7 +112,7 @@ app.post('/displaySongs', (req, res) => {
   });
 });
 
-app.get('/songs', (req, res) => {
+app.post('/songs', (req, res) => {
   let titleWithPlusSigns = req.query.title ? req.query.title.replaceAll(" ", "+") : null;
   console.log(titleWithPlusSigns);
   if (!titleWithPlusSigns) {

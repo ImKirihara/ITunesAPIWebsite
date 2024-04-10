@@ -96,7 +96,7 @@ function getSong() {
       makeButtons();
         }
     }
-    xhr.open('GET', `/songs?title=${songName}`, true)
+    xhr.open('POST', `/songs?title=${songName}`, true)
     xhr.send()
 
 
@@ -110,7 +110,7 @@ function getUsers(){
           generateUserData(response)
       }
   }
-  xhr.open('GET', '/getUsers', true)
+  xhr.open('POST', '/getUsers', true)
   xhr.send()
 
 }
